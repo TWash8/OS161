@@ -1,0 +1,53 @@
+arraytest.o       defs.mk           kgets.o           ltrace.o          opt-sfs.h         sfs_fs.o          synch.o           vfslist.o
+atoi.o            depend.mk         kheap.o           ltrace_att.o      opt-synchprobs.h  sfs_io.o          synchtest.o       vfslookup.o
+autoconf.c        device.o          kprintf.o         machine@          pcb.o             sfs_vnode.o       syscall.o         vfspath.o
+autoconf.h        devnull.o         lamebus.o         main.o            pseudorand.o      snprintf.o        thread.o          vm.o
+autoconf.o        emu.o             lamebus_mips.o    malloctest.o      pseudorand_att.o  spl.o             threadstart.o     vnode.o
+beep.o            emu_att.o         lhd.o             memcpy.o          queue.o           start.o           threadtest.o
+beep_ltimer.o     exception.o       lhd_att.o         memmove.o         queuetest.o       strcat.o          tlb_mips1.o
+bitmap.o          files.mk          loadelf.o         menu.o            ram.o             strchr.o          trap.o
+bitmaptest.o      fstest.o          lrandom.o         mips-setjmp.o     random.o          strcmp.o          tt3.o
+bzero.o           hardclock.o       lrandom_att.o     misc.o            random_lrandom.o  strcpy.o          uio.o
+ug74:~/ece344/os161/kern/compile/ASST3% [A
+[A: Command not found.
+ug74:~/ece344/os161/kern/compile/ASST3% d
+cs161-gcc   -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -g -nostdinc -I../../include -I../../dev -I.  -ffreestanding -D_KERNEL -G 0 -c ../../arch/mips/mi
+ps/syscall.c
+In file included from ../../include/addrspace.h:4,
+                 from ../../arch/mips/mips/syscall.c:12:
+../../include/vm.h:31: warning: `struct addrspace' declared inside parameter list
+../../include/vm.h:31: warning: its scope is only this definition or declaration, which is probably not what you want
+../../include/vm.h:32: warning: `struct addrspace' declared inside parameter list
+../../include/vm.h:33: warning: `struct addrspace' declared inside parameter list
+../../include/vm.h:34: warning: `struct addrspace' declared inside parameter list
+../../include/vm.h:35: warning: `struct addrspace' declared inside parameter list
+../../include/vm.h:36: warning: `struct addrspace' declared inside parameter list
+../../arch/mips/mips/syscall.c: In function `mips_syscall':
+../../arch/mips/mips/syscall.c:100: warning: passing arg 2 of `sys_waitpid' makes pointer from integer without a cast
+../../arch/mips/mips/syscall.c: In function `sys_execv':
+../../arch/mips/mips/syscall.c:316: warning: unused variable `k'
+../../arch/mips/mips/syscall.c: In function `sys_write':
+../../arch/mips/mips/syscall.c:449: warning: statement with no effect
+../../arch/mips/mips/syscall.c:450: warning: statement with no effect
+../../arch/mips/mips/syscall.c: In function `sys_read':
+../../arch/mips/mips/syscall.c:460: warning: unused parameter `fd'
+../../arch/mips/mips/syscall.c: At top level:
+../../include/vm.h:28: warning: `swapper' declared `static' but never defined
+../../conf/newvers.sh ASST3
+*** This is ASST3 build #495 ***
+cs161-gcc   -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -g -nostdinc -I../../include -I../../dev -I.  -ffreestanding -D_KERNEL -G 0 -c vers.c
+cs161-ld   -nostdlib -Ttext 0x80001000 -T ../../arch/mips/conf/ldscript -G 0 console.o emu.o lser.o lhd.o pseudorand.o random.o ltimer.o lamebus.o lrandom.o
+beep.o ltrace.o rtclock.o ltimer_att.o con_lser.o lhd_att.o random_lrandom.o rtclock_ltimer.o ltrace_att.o lser_att.o lrandom_att.o emu_att.o beep_ltimer.o p
+seudorand_att.o sfs_vnode.o sfs_fs.o sfs_io.o addrspace.o cache_mips1.o exception.o lamebus_mips.o interrupt.o pcb.o ram.o spl.o start.o switch.o syscall.o t
+hreadstart.o trap.o tlb_mips1.o mips-setjmp.o copyinout.o array.o bitmap.o queue.o kheap.o kprintf.o kgets.o misc.o ntoh.o __printf.o snprintf.o atoi.o bzero
+.o memcpy.o memmove.o strcat.o strchr.o strcmp.o strcpy.o strlen.o strrchr.o strtok_r.o init.o device.o vfscwd.o vfslist.o vfslookup.o vfspath.o vnode.o devn
+ull.o hardclock.o synch.o scheduler.o thread.o main.o menu.o hello.o loadelf.o runprogram.o uio.o vm.o arraytest.o bitmaptest.o queuetest.o threadtest.o tt3.
+o synchtest.o malloctest.o fstest.o autoconf.o vers.o -o kernel
+cs161-size kernel
+   text    data     bss     dec     hex filename
+ 172184     512    7796  180492   2c10c kernel
+[ -d /homes/t/tsetimmy/ece344/root ] || mkdir /homes/t/tsetimmy/ece344/root
+cp kernel /homes/t/tsetimmy/ece344/root/kernel-ASST3
+rm -f /homes/t/tsetimmy/ece344/root/kernel
+ln -s kernel-ASST3 /homes/t/tsetimmy/ece344/root/kernel
+ug74:~/ece344/os161/kern/compile/ASST3%
